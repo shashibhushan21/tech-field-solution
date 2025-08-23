@@ -2,7 +2,7 @@ import { Code, Rocket, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { StarsBackground } from '@/components/ui/stars-background';
+import { SparklesCore } from '@/components/ui/sparkles';
 
 const serviceCategories = [
   {
@@ -38,7 +38,18 @@ const serviceCategories = [
 export default function ServicesPage() {
   return (
     <div className="bg-background">
-       <header className="relative flex h-[60vh] w-full flex-col items-center justify-center overflow-hidden">
+      <header className="relative flex h-[60vh] w-full flex-col items-center justify-center overflow-hidden">
+        <div className="w-full absolute inset-0 h-full">
+          <SparklesCore
+            id="tsparticlesfullpage"
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.4}
+            particleDensity={100}
+            className="w-full h-full"
+            particleColor="#FFFFFF"
+          />
+        </div>
         <div className="text-center z-10">
           <h1 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter">
             Our Services
@@ -47,7 +58,6 @@ export default function ServicesPage() {
             Comprehensive solutions to build, launch, and grow your digital product.
           </p>
         </div>
-        <StarsBackground />
       </header>
 
       <div className="divide-y divide-border">
