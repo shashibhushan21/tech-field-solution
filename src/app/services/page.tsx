@@ -2,7 +2,7 @@ import { Code, Rocket, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Component as EtherealShadow } from '@/components/ui/etheral-shadow';
+import { StarsBackground } from '@/components/ui/stars-background';
 
 const serviceCategories = [
   {
@@ -38,15 +38,17 @@ const serviceCategories = [
 export default function ServicesPage() {
   return (
     <div className="bg-background">
-      <div className="h-[60vh] w-full">
-         <EtherealShadow
-            title="Our Services"
-            color="rgba(128, 128, 128, 0.5)"
-            animation={{ scale: 80, speed: 80 }}
-            noise={{ opacity: 0.8, scale: 1.1 }}
-            sizing="fill"
-          />
-      </div>
+       <header className="relative flex h-[60vh] w-full flex-col items-center justify-center overflow-hidden">
+        <div className="text-center z-10">
+          <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">
+            Our Services
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
+            Comprehensive solutions to build, launch, and grow your digital product.
+          </p>
+        </div>
+        <StarsBackground />
+      </header>
 
       <div className="divide-y divide-border">
         {serviceCategories.map((service, index) => (
