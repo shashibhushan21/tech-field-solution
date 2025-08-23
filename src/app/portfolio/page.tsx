@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { SpiralAnimation } from "@/components/ui/spiral-animation";
+import { useState, useEffect } from 'react';
 
 const projects = [
   { title: "Project Alpha", category: "Web Development", image: "https://placehold.co/600x400.png", hint: "website mockup" },
@@ -15,19 +17,46 @@ const projects = [
   { title: "Project Zeta", category: "UI/UX Design", image: "https://placehold.co/600x400.png", hint: "mobile app" },
 ];
 
+function PortfolioHeader() {
+  const [startVisible, setStartVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStartVisible(true)
+    }, 2000)
+    
+    return () => clearTimeout(timer)
+  }, [])
+
+  return (
+    <div className="relative w-full h-screen overflow-hidden bg-black">
+      <div className="absolute inset-0">
+        <SpiralAnimation />
+      </div>
+      <div 
+        className={`
+          absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10
+          transition-all duration-[1500ms] ease-out
+          ${startVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+        `}
+      >
+        <div 
+          className="
+            text-white text-4xl md:text-6xl tracking-[0.2em] uppercase font-extralight
+          "
+        >
+          Our Work
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
 export default function PortfolioPage() {
   return (
     <div className="bg-background">
-      <header className="pt-32 pb-16 md:pt-48 md:pb-24 text-center">
-        <div className="container mx-auto px-4 md:px-6">
-          <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">
-            Our Work
-          </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
-            We take pride in the solutions we've delivered. Explore a selection of our projects that have made a real impact.
-          </p>
-        </div>
-      </header>
+      <PortfolioHeader />
       
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4 md:px-6">
