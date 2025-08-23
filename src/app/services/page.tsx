@@ -2,7 +2,7 @@ import { Code, Rocket, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { StarsBackground } from '@/components/ui/stars-background';
+import { ShootingStars } from '@/components/ui/shooting-stars';
 
 const serviceCategories = [
   {
@@ -40,14 +40,37 @@ export default function ServicesPage() {
     <div className="bg-background">
        <header className="relative flex h-[60vh] w-full flex-col items-center justify-center overflow-hidden">
         <div className="text-center z-10">
-          <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">
+          <h1 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter">
             Our Services
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
             Comprehensive solutions to build, launch, and grow your digital product.
           </p>
         </div>
-        <StarsBackground />
+        <ShootingStars
+          starColor="#9E00FF"
+          trailColor="#2EB9DF"
+          minSpeed={15}
+          maxSpeed={35}
+          minDelay={1000}
+          maxDelay={3000}
+        />
+        <ShootingStars
+          starColor="#FF0099"
+          trailColor="#FFB800"
+          minSpeed={10}
+          maxSpeed={25}
+          minDelay={2000}
+          maxDelay={4000}
+        />
+        <ShootingStars
+          starColor="#00FF9E"
+          trailColor="#00B8FF"
+          minSpeed={20}
+          maxSpeed={40}
+          minDelay={1500}
+          maxDelay={3500}
+        />
       </header>
 
       <div className="divide-y divide-border">
