@@ -1,8 +1,12 @@
+'use client'
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { SpiralAnimation } from "@/components/ui/spiral-animation";
+import { useState, useEffect } from "react";
 
 const projects = [
   { title: "Project Alpha", category: "Web Development", image: "https://placehold.co/600x400.png", hint: "website mockup" },
@@ -14,14 +18,36 @@ const projects = [
 ];
 
 export default function PortfolioPage() {
+    const [startVisible, setStartVisible] = useState(false)
+  
+    // Fade in the start button after animation loads
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setStartVisible(true)
+      }, 2000)
+      
+      return () => clearTimeout(timer)
+    }, [])
+
   return (
     <div className="bg-background">
-      <header className="pt-32 pb-16 md:pt-48 md:pb-24 bg-secondary text-center">
-        <div className="container mx-auto px-4 md:px-6">
-          <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">Our Work</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
-            We take pride in the solutions we've delivered. Explore a selection of our projects that have made a real impact.
-          </p>
+      <header className="relative h-screen w-full overflow-hidden bg-black">
+         <div className="absolute inset-0">
+            <SpiralAnimation />
+         </div>
+         <div 
+            className={`
+            absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10
+            transition-all duration-1000 ease-out
+            ${startVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+            `}
+        >
+            <div className="text-center">
+                 <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter text-white">Our Work</h1>
+                 <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-white/60">
+                    We take pride in the solutions we've delivered. Explore a selection of our projects that have made a real impact.
+                </p>
+            </div>
         </div>
       </header>
 
