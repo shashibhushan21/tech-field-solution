@@ -2,7 +2,7 @@ import { Code, Rocket, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShootingStars } from '@/components/ui/shooting-stars';
+import { StarsBackground } from '@/components/ui/stars-background';
 
 const serviceCategories = [
   {
@@ -47,30 +47,7 @@ export default function ServicesPage() {
             Comprehensive solutions to build, launch, and grow your digital product.
           </p>
         </div>
-        <ShootingStars
-          starColor="#9E00FF"
-          trailColor="#2EB9DF"
-          minSpeed={15}
-          maxSpeed={35}
-          minDelay={1000}
-          maxDelay={3000}
-        />
-        <ShootingStars
-          starColor="#FF0099"
-          trailColor="#FFB800"
-          minSpeed={10}
-          maxSpeed={25}
-          minDelay={2000}
-          maxDelay={4000}
-        />
-        <ShootingStars
-          starColor="#00FF9E"
-          trailColor="#00B8FF"
-          minSpeed={20}
-          maxSpeed={40}
-          minDelay={1500}
-          maxDelay={3500}
-        />
+        <StarsBackground />
       </header>
 
       <div className="divide-y divide-border">
