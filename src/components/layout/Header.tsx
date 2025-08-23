@@ -37,7 +37,9 @@ export function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 text-xl font-bold font-headline">
-          <Zap className="h-6 w-6 text-primary" />
+          <div className="bg-primary text-primary-foreground p-2 rounded-lg">
+            <Zap className="h-5 w-5" />
+          </div>
           <span>Tech Bloom</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
@@ -63,7 +65,9 @@ export function Header() {
             <SheetContent side="right" className="w-full max-w-xs bg-background">
               <div className="flex flex-col h-full p-6">
                 <Link href="/" className="flex items-center gap-2 text-xl font-bold font-headline mb-8" onClick={closeMobileMenu}>
-                  <Zap className="h-6 w-6 text-primary" />
+                   <div className="bg-primary text-primary-foreground p-2 rounded-lg">
+                    <Zap className="h-5 w-5" />
+                  </div>
                   <span>Tech Bloom</span>
                 </Link>
                 <nav className="flex flex-col gap-6 text-lg">

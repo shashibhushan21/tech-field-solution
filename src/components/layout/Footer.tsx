@@ -33,7 +33,9 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 text-2xl font-bold font-headline">
-              <Zap className="h-7 w-7 text-primary" />
+              <div className="bg-primary text-primary-foreground p-2 rounded-lg">
+                <Zap className="h-5 w-5" />
+              </div>
               <span>Tech Bloom</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">We build and grow innovative digital products for leading companies.</p>

@@ -3,41 +3,45 @@ import { WhyChooseUs } from '@/components/sections/WhyChooseUs';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { BentoGrid, type BentoItem } from '@/components/ui/bento-grid';
-import { Code, Megaphone, Palette, Rocket, Search } from 'lucide-react';
+import { Code, Megaphone, Palette, Rocket, Search, CheckCircle, TrendingUp, Video, Globe } from 'lucide-react';
 
 const services: BentoItem[] = [
-  {
-    icon: <Palette className="h-5 w-5 text-primary" />,
-    title: 'UI/UX Design',
-    description: 'Crafting intuitive and beautiful user interfaces that captivate and convert.',
-    href: '/services#ui-ux',
-    colSpan: 3,
-    tags: ['Web Design', 'Mobile Apps']
-  },
-  {
-    icon: <Code className="h-5 w-5 text-primary" />,
-    title: 'Web Development',
-    description: 'Building robust, scalable, and high-performance web applications tailored to your needs.',
-    href: '/services#development',
-    colSpan: 2,
-    tags: ['React', 'Next.js']
-  },
-  {
-    icon: <Rocket className="h-5 w-5 text-primary" />,
-    title: 'Growth Strategy',
-    description: 'Implementing data-driven strategies to accelerate your user acquisition and retention.',
-    href: '/services#growth',
-    colSpan: 2,
-    tags: ['CRO', 'Analytics']
-  },
-  {
-    icon: <Megaphone className="h-5 w-5 text-primary" />,
-    title: 'Digital Marketing',
-    description: 'Boosting your online presence and reaching the right audience with targeted campaigns.',
-    href: '/services#marketing',
-    colSpan: 3,
-    tags: ['Social Media', 'Content']
-  },
+    {
+        title: "Analytics Dashboard",
+        meta: "v2.4.1",
+        description:
+            "Real-time metrics with AI-powered insights and predictive analytics",
+        icon: <TrendingUp className="w-4 h-4 text-blue-500" />,
+        status: "Live",
+        tags: ["Statistics", "Reports", "AI"],
+        colSpan: 2,
+        hasPersistentHover: true,
+    },
+    {
+        title: "Task Manager",
+        meta: "84 completed",
+        description: "Automated workflow management with priority scheduling",
+        icon: <CheckCircle className="w-4 h-4 text-emerald-500" />,
+        status: "Updated",
+        tags: ["Productivity", "Automation"],
+    },
+    {
+        title: "Media Library",
+        meta: "12GB used",
+        description: "Cloud storage with intelligent content processing",
+        icon: <Video className="w-4 h-4 text-purple-500" />,
+        tags: ["Storage", "CDN"],
+        colSpan: 2,
+        status: "Active",
+    },
+    {
+        title: "Global Network",
+        meta: "6 regions",
+        description: "Multi-region deployment with edge computing",
+        icon: <Globe className="w-4 h-4 text-sky-500" />,
+        status: "Beta",
+        tags: ["Infrastructure", "Edge"],
+    },
 ];
 
 
