@@ -18,31 +18,17 @@ const projects = [
 ];
 
 function PortfolioHeader() {
-  const [startVisible, setStartVisible] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setStartVisible(true)
-    }, 2000)
-    
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <div className="absolute inset-0">
         <SpiralAnimation />
       </div>
       <div 
-        className={`
-          absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10
-          transition-all duration-[1500ms] ease-out
-          ${startVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
-        `}
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
       >
         <div 
           className="
-            text-white text-4xl md:text-6xl tracking-[0.2em] uppercase font-extralight
+            text-white text-4xl md:text-5xl tracking-[0.2em] uppercase font-extralight
           "
         >
           Our Work
