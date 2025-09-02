@@ -409,8 +409,9 @@ export function SpiralAnimation() {
     
     // 创建和管理动画
     useEffect(() => {
+        if (dimensions.width === 0 || dimensions.height === 0) return
         const canvas = canvasRef.current
-        if (!canvas || dimensions.width === 0 || dimensions.height === 0) return
+        if (!canvas) return
         
         const ctx = canvas.getContext('2d')
         if (!ctx) return
