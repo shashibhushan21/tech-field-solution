@@ -30,6 +30,7 @@ const footerLinks = [
       { label: 'Blog', href: '#' },
       { label: 'Contact', href: '/contact' },
       { label: 'AI Optimizer', href: '/content-optimizer' },
+      { label: 'Cost Estimator', href: '/cost-estimator' },
     ],
   },
 ];

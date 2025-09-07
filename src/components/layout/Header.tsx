@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/about', label: 'About' },
   { href: '/content-optimizer', label: 'AI Optimizer' },
+  { href: '/cost-estimator', label: 'Cost Estimator' },
 ];
 
 export function Header() {
