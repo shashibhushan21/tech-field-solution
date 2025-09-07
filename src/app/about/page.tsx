@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Award, HeartHandshake, Lightbulb, Users } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { BackgroundPaths } from '@/components/ui/background-paths';
 
 const teamMembers = [
   { name: 'Alice Johnson', role: 'Founder & CEO', image: 'https://picsum.photos/300/300', hint: 'woman portrait' },
@@ -19,26 +19,9 @@ const values = [
 ];
 
 export default function AboutPage() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
   return (
     <div className="bg-background">
-      <header className="pt-32 pb-16 md:pt-48 md:pb-24 bg-secondary text-center">
-        <div className="container mx-auto px-4 md:px-6">
-          <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">About NextSms</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
-            We are a team of passionate creators, thinkers, and builders dedicated to crafting exceptional digital experiences.
-          </p>
-        </div>
-      </header>
+      <BackgroundPaths title="About NextSms" />
 
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
