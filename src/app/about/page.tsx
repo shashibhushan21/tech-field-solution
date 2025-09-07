@@ -28,7 +28,7 @@ export default function AboutPage() {
 
   return (
     <div className="bg-background">
-      {isMounted ? <BackgroundPaths title="About NextSms" /> : <div className="h-[50vh] w-full bg-background" />}
+      {isMounted ? <BackgroundPaths title="About NextSms" /> : <div className="h-[60vh] w-full bg-background" />}
 
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
