@@ -24,10 +24,14 @@ function PortfolioHeader() {
     setIsMounted(true);
   }, []);
 
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <div className="absolute inset-0">
-        {isMounted && <SpiralAnimation />}
+        <SpiralAnimation />
       </div>
       <div 
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
