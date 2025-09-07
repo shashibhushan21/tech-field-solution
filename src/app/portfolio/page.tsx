@@ -18,17 +18,23 @@ const projects = [
 ];
 
 function PortfolioHeader() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <div className="absolute inset-0">
-        <SpiralAnimation />
+        {isMounted && <SpiralAnimation />}
       </div>
       <div 
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translatey-1/2 z-10"
       >
         <div 
           className="
-            text-white text-4xl md:text-5xl tracking-[0.2em] uppercase font-extralight
+            text-white text-md tracking-[0.2em] uppercase font-extralight
           "
         >
           Our Work
