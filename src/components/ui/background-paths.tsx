@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 function FloatingPaths({ position }: { position: number }) {
@@ -59,7 +58,7 @@ export function BackgroundPaths({
     const words = title.split(" ");
 
     return (
-        <div className="relative min-h-[60vh] md:min-h-[80vh] w-full flex items-center justify-center overflow-hidden bg-background">
+        <div className="relative min-h-[60vh] w-full flex items-center justify-center overflow-hidden bg-background">
             <div className="absolute inset-0">
                 <FloatingPaths position={1} />
                 <FloatingPaths position={-1} />
@@ -72,7 +71,7 @@ export function BackgroundPaths({
                     transition={{ duration: 2 }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter font-headline">
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 tracking-tighter font-headline">
                         {words.map((word, wordIndex) => (
                             <span
                                 key={wordIndex}
