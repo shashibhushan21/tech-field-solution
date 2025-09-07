@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'NextSms - Unlock Your Digital Potential',
+  title: 'NextSms LLP - Unlock Your Digital Potential',
   description: 'We build and grow innovative digital products for leading companies.',
 };
 

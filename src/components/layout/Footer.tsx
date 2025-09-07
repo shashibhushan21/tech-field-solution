@@ -45,7 +45,7 @@ export function Footer() {
               <div className="bg-primary text-primary-foreground p-2 rounded-lg">
                 <Zap className="h-5 w-5" />
               </div>
-              <span>NextSms</span>
+              <span>NextSms LLP</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">We build and grow innovative digital products for leading companies.</p>
             <div className="mt-6 flex space-x-4">
@@ -75,7 +75,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} NextSms. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NextSms LLP. All rights reserved.</p>
         </div>
       </div>
     </footer>

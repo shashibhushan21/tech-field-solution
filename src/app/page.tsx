@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <>
       <HeroGeometric 
-        badge="NextSms"
+        badge="NextSms LLP"
         title1="Unlock Your"
         title2="Digital Potential"
       />
