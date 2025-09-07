@@ -3,7 +3,7 @@ import { WhyChooseUs } from '@/components/sections/WhyChooseUs';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { BentoGrid, type BentoItem } from '@/components/ui/bento-grid';
-import { Code, Smartphone, Megaphone, Rocket, Search, TrendingUp, Globe } from 'lucide-react';
+import { Code, Smartphone, Megaphone, Search } from 'lucide-react';
 
 const services: BentoItem[] = [
     {
@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <>
       <HeroGeometric 
-        badge="NextSms LLP"
+        badge="NextSms"
         title1="Unlock Your"
         title2="Digital Potential"
       />

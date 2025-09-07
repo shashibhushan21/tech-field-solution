@@ -33,7 +33,7 @@ export default function AboutPage() {
     <div className="bg-background">
       <header className="pt-32 pb-16 md:pt-48 md:pb-24 bg-secondary text-center">
         <div className="container mx-auto px-4 md:px-6">
-          <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">About NextSms LLP</h1>
+          <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">About NextSms</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
             We are a team of passionate creators, thinkers, and builders dedicated to crafting exceptional digital experiences.
           </p>
