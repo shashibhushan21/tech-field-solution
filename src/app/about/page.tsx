@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Award, HeartHandshake, Lightbulb, Users } from 'lucide-react';
 import { BackgroundPaths } from '@/components/ui/background-paths';
+import { useEffect, useState } from 'react';
 
 const teamMembers = [
   { name: 'Alice Johnson', role: 'Founder & CEO', image: 'https://picsum.photos/300/300', hint: 'woman portrait' },
@@ -19,9 +20,15 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="bg-background">
-      <BackgroundPaths title="About NextSms" />
+      {isMounted && <BackgroundPaths title="About NextSms" />}
 
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
