@@ -58,7 +58,7 @@ export function BackgroundPaths({
     const words = title.split(" ");
 
     return (
-        <div className="relative min-h-[60vh] w-full flex items-center justify-center overflow-hidden bg-background">
+        <div className="relative min-h-[40vh] w-full flex items-center justify-center overflow-hidden bg-background">
             <div className="absolute inset-0">
                 <FloatingPaths position={1} />
                 <FloatingPaths position={-1} />
@@ -71,7 +71,7 @@ export function BackgroundPaths({
                     transition={{ duration: 2 }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 tracking-tighter font-headline">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 tracking-tighter font-headline">
                         {words.map((word, wordIndex) => (
                             <span
                                 key={wordIndex}
