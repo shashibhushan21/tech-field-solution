@@ -1,4 +1,4 @@
-import { Code, Rocket, ArrowRight } from 'lucide-react';
+import { Code, Smartphone, Megaphone, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,11 +6,11 @@ import { SparklesCore } from '@/components/ui/sparkles';
 
 const serviceCategories = [
   {
-    id: 'development',
+    id: 'web-development',
     icon: Code,
-    title: 'Web Development',
+    title: 'Web Application Development',
     summary: 'From powerful web applications to stunning marketing sites, we build fast, secure, and scalable solutions using modern technologies. Our code is clean, efficient, and built to last.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://picsum.photos/600/400',
     hint: 'code editor',
     benefits: [
       'Front-end and back-end development',
@@ -20,17 +20,31 @@ const serviceCategories = [
     ]
   },
   {
-    id: 'growth',
-    icon: Rocket,
-    title: 'Growth Strategy',
-    summary: 'We help you scale your business with data-informed growth strategies. We identify key metrics, optimize your funnel, and implement tactics that drive sustainable user acquisition and growth.',
-    image: 'https://placehold.co/600x400.png',
-    hint: 'growth chart',
+    id: 'mobile-development',
+    icon: Smartphone,
+    title: 'Mobile App Development',
+    summary: 'We create engaging and intuitive mobile applications for iOS and Android. Whether native or cross-platform, our apps are designed to perform and provide a seamless user experience.',
+    image: 'https://picsum.photos/600/400',
+    hint: 'mobile app screen',
     benefits: [
-      'Conversion rate optimization (CRO)',
-      'A/B testing and experimentation',
-      'Customer lifecycle marketing',
-      'Data analysis and insights',
+      'Native iOS (Swift) & Android (Kotlin)',
+      'Cross-platform with React Native',
+      'App Store submission and optimization',
+      'Push notifications and in-app purchases',
+    ]
+  },
+  {
+    id: 'digital-marketing',
+    icon: Megaphone,
+    title: 'Digital Marketing & SEO',
+    summary: 'We help you scale your business with data-informed growth strategies. We boost your online presence, drive targeted traffic, and implement tactics that result in sustainable growth.',
+    image: 'https://picsum.photos/600/400',
+    hint: 'marketing analytics dashboard',
+    benefits: [
+      'Search Engine Optimization (SEO)',
+      'Pay-Per-Click (PPC) Advertising',
+      'Social Media Marketing (SMM)',
+      'Content strategy and creation',
     ]
   }
 ];
@@ -69,7 +83,8 @@ export default function ServicesPage() {
                   <Image
                     src={service.image}
                     alt={service.title}
-                    layout="fill"
+                    width={600}
+                    height={400}
                     objectFit="cover"
                     className="rounded-2xl shadow-lg"
                     data-ai-hint={service.hint}

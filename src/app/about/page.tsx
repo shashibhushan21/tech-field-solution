@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { Award, HeartHandshake, Lightbulb, Users } from 'lucide-react';
 
 const teamMembers = [
-  { name: 'Alice Johnson', role: 'Founder & CEO', image: 'https://placehold.co/300x300.png', hint: 'woman portrait' },
-  { name: 'Bob Williams', role: 'Lead Developer', image: 'https://placehold.co/300x300.png', hint: 'man portrait' },
-  { name: 'Charlie Brown', role: 'Head of Design', image: 'https://placehold.co/300x300.png', hint: 'designer portrait' },
-  { name: 'Diana Miller', role: 'Growth Strategist', image: 'https://placehold.co/300x300.png', hint: 'professional woman' },
+  { name: 'Alice Johnson', role: 'Founder & CEO', image: 'https://picsum.photos/300/300', hint: 'woman portrait' },
+  { name: 'Bob Williams', role: 'Lead Developer', image: 'https://picsum.photos/300/300', hint: 'man portrait' },
+  { name: 'Charlie Brown', role: 'Head of Design', image: 'https://picsum.photos/300/300', hint: 'designer portrait' },
+  { name: 'Diana Miller', role: 'Growth Strategist', image: 'https://picsum.photos/300/300', hint: 'professional woman' },
 ];
 
 const values = [
@@ -32,7 +32,7 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 className="font-headline text-3xl md:text-4xl font-extrabold tracking-tight">Our Mission & Values</h2>
-                    <p className="mt-4 text-lg text-muted-foreground">Our mission is to empower businesses with transformative technology and forward-thinking strategies. We are guided by a core set of values that define who we are and how we work.</p>
+                    <p className="mt-4 text-lg text-muted-foreground">Our mission is to empower businesses with transformative digital solutions. We specialize in creating high-performance web and mobile applications, backed by strategic digital marketing and SEO to ensure your project reaches its full potential.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {values.map(value => (
@@ -59,7 +59,7 @@ export default function AboutPage() {
             {teamMembers.map((member) => (
               <div key={member.name} className="text-center">
                 <div className="relative h-48 w-48 mx-auto mb-4">
-                  <Image src={member.image} alt={member.name} layout="fill" objectFit="cover" className="rounded-full" data-ai-hint={member.hint} />
+                  <Image src={member.image} alt={member.name} width={300} height={300} objectFit="cover" className="rounded-full" data-ai-hint={member.hint} />
                 </div>
                 <h3 className="font-bold text-lg">{member.name}</h3>
                 <p className="text-primary">{member.role}</p>

@@ -5,16 +5,15 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { SpiralAnimation } from "@/components/ui/spiral-animation";
 import { useState, useEffect } from 'react';
 
 const projects = [
-  { title: "Project Alpha", category: "Web Development", image: "https://picsum.photos/600/400", hint: "website mockup" },
-  { title: "Project Beta", category: "UI/UX Design", image: "https://picsum.photos/600/400", hint: "app design" },
-  { title: "Project Gamma", category: "Growth Strategy", image: "https://picsum.photos/600/400", hint: "analytics dashboard" },
-  { title: "Project Delta", category: "Web Development", image: "https://picsum.photos/600/400", hint: "saas interface" },
-  { title: "Project Epsilon", category: "Digital Marketing", image: "https://picsum.photos/600/400", hint: "social media" },
-  { title: "Project Zeta", category: "UI/UX Design", image: "https://picsum.photos/600/400", hint: "mobile app" },
+  { title: "Project Alpha", category: "Web Application", image: "https://picsum.photos/600/400", hint: "website mockup" },
+  { title: "Project Beta", category: "Mobile App", image: "https://picsum.photos/600/400", hint: "app design" },
+  { title: "Project Gamma", category: "SEO Strategy", image: "https://picsum.photos/600/400", hint: "analytics dashboard" },
+  { title: "Project Delta", category: "Web Application", image: "https://picsum.photos/600/400", hint: "saas interface" },
+  { title: "Project Epsilon", category: "Digital Marketing", image: "https://picsum.photos/600/400", hint: "social media campaign" },
+  { title: "Project Zeta", category: "Mobile App", image: "https://picsum.photos/600/400", hint: "mobile app screen" },
 ];
 
 function PortfolioHeader() {
@@ -29,20 +28,14 @@ function PortfolioHeader() {
   }
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black">
-      <div className="absolute inset-0">
-        <SpiralAnimation />
-      </div>
+    <div className="relative w-full h-[60vh] overflow-hidden bg-background">
       <div 
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center"
       >
-        <div 
-          className="
-            text-white text-md tracking-[0.2em] uppercase font-extralight
-          "
-        >
-          Our Work
-        </div>
+        <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">Our Work</h1>
+        <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
+          A showcase of our successful projects and partnerships.
+        </p>
       </div>
     </div>
   )

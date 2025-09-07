@@ -3,44 +3,40 @@ import { WhyChooseUs } from '@/components/sections/WhyChooseUs';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { BentoGrid, type BentoItem } from '@/components/ui/bento-grid';
-import { Code, Megaphone, Palette, Rocket, Search, CheckCircle, TrendingUp, Video, Globe } from 'lucide-react';
+import { Code, Smartphone, Megaphone, Rocket, Search, TrendingUp, Globe } from 'lucide-react';
 
 const services: BentoItem[] = [
     {
-        title: "Analytics Dashboard",
-        meta: "v2.4.1",
-        description:
-            "Real-time metrics with AI-powered insights and predictive analytics",
-        icon: <TrendingUp className="w-4 h-4 text-blue-500" />,
-        status: "Live",
-        tags: ["Statistics", "Reports", "AI"],
+        title: "Web Application Development",
+        description: "Custom web solutions that are scalable, secure, and deliver exceptional user experiences.",
+        icon: <Code className="w-4 h-4 text-purple-500" />,
+        status: "Full-Stack",
+        tags: ["React", "Next.js", "Node"],
         colSpan: 2,
         hasPersistentHover: true,
     },
     {
-        title: "Task Manager",
-        meta: "84 completed",
-        description: "Automated workflow management with priority scheduling",
-        icon: <CheckCircle className="w-4 h-4 text-emerald-500" />,
-        status: "Updated",
-        tags: ["Productivity", "Automation"],
+        title: "Mobile App Development",
+        description: "Native and cross-platform mobile apps that engage users and drive business growth.",
+        icon: <Smartphone className="w-4 h-4 text-emerald-500" />,
+        status: "iOS & Android",
+        tags: ["Swift", "Kotlin", "React Native"],
     },
     {
-        title: "Media Library",
-        meta: "12GB used",
-        description: "Cloud storage with intelligent content processing",
-        icon: <Video className="w-4 h-4 text-purple-500" />,
-        tags: ["Storage", "CDN"],
-        colSpan: 2,
+        title: "SEO Optimization",
+        description: "Boost your online visibility and rank higher in search results with our proven SEO strategies.",
+        icon: <Search className="w-4 h-4 text-blue-500" />,
+        tags: ["On-Page", "Off-Page"],
+        colSpan: 1,
         status: "Active",
     },
     {
-        title: "Global Network",
-        meta: "6 regions",
-        description: "Multi-region deployment with edge computing",
-        icon: <Globe className="w-4 h-4 text-sky-500" />,
-        status: "Beta",
-        tags: ["Infrastructure", "Edge"],
+        title: "Digital Marketing",
+        description: "Comprehensive marketing campaigns to build your brand and connect with your target audience.",
+        icon: <Megaphone className="w-4 h-4 text-rose-500" />,
+        status: "Campaigns",
+        tags: ["SMM", "PPC", "Content"],
+        colSpan: 2,
     },
 ];
 

@@ -17,6 +17,14 @@ const footerLinks = [
     ],
   },
   {
+    title: 'Services',
+    links: [
+      { label: 'Web Development', href: '/services#web-development' },
+      { label: 'Mobile Development', href: '/services#mobile-development' },
+      { label: 'Digital Marketing', href: '/services#digital-marketing' },
+    ],
+  },
+  {
     title: 'Resources',
     links: [
       { label: 'Blog', href: '#' },
@@ -49,22 +57,20 @@ export function Footer() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:col-span-3 md:grid-cols-3">
-            <div className="md:col-start-2 grid grid-cols-2 gap-8">
-              {footerLinks.map((section) => (
-                <div key={section.title}>
-                  <h3 className="font-semibold">{section.title}</h3>
-                  <ul className="mt-4 space-y-2">
-                    {section.links.map((link) => (
-                      <li key={link.label}>
-                        <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary">
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+            {footerLinks.map((section) => (
+              <div key={section.title}>
+                <h3 className="font-semibold">{section.title}</h3>
+                <ul className="mt-4 space-y-2">
+                  {section.links.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
