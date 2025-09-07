@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import { Award, HeartHandshake, Lightbulb, Users } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const teamMembers = [
   { name: 'Alice Johnson', role: 'Founder & CEO', image: 'https://picsum.photos/300/300', hint: 'woman portrait' },
@@ -16,6 +19,16 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div className="bg-background">
       <header className="pt-32 pb-16 md:pt-48 md:pb-24 bg-secondary text-center">
