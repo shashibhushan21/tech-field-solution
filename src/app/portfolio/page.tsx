@@ -9,12 +9,12 @@ import { SpiralAnimation } from "@/components/ui/spiral-animation";
 import { useState, useEffect } from 'react';
 
 const projects = [
-  { title: "Project Alpha", category: "Web Development", image: "https://placehold.co/600x400.png", hint: "website mockup" },
-  { title: "Project Beta", category: "UI/UX Design", image: "https://placehold.co/600x400.png", hint: "app design" },
-  { title: "Project Gamma", category: "Growth Strategy", image: "https://placehold.co/600x400.png", hint: "analytics dashboard" },
-  { title: "Project Delta", category: "Web Development", image: "https://placehold.co/600x400.png", hint: "saas interface" },
-  { title: "Project Epsilon", category: "Digital Marketing", image: "https://placehold.co/600x400.png", hint: "social media" },
-  { title: "Project Zeta", category: "UI/UX Design", image: "https://placehold.co/600x400.png", hint: "mobile app" },
+  { title: "Project Alpha", category: "Web Development", image: "https://picsum.photos/600/400", hint: "website mockup" },
+  { title: "Project Beta", category: "UI/UX Design", image: "https://picsum.photos/600/400", hint: "app design" },
+  { title: "Project Gamma", category: "Growth Strategy", image: "https://picsum.photos/600/400", hint: "analytics dashboard" },
+  { title: "Project Delta", category: "Web Development", image: "https://picsum.photos/600/400", hint: "saas interface" },
+  { title: "Project Epsilon", category: "Digital Marketing", image: "https://picsum.photos/600/400", hint: "social media" },
+  { title: "Project Zeta", category: "UI/UX Design", image: "https://picsum.photos/600/400", hint: "mobile app" },
 ];
 
 function PortfolioHeader() {
@@ -30,7 +30,7 @@ function PortfolioHeader() {
         {isMounted && <SpiralAnimation />}
       </div>
       <div 
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translatey-1/2 z-10"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
       >
         <div 
           className="
@@ -56,7 +56,7 @@ export default function PortfolioPage() {
             {projects.map((project) => (
               <Card key={project.title} className="overflow-hidden group bg-card border-border">
                 <div className="relative h-60">
-                  <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" data-ai-hint={project.hint} />
+                  <Image src={project.image} alt={project.title} width={600} height={400} objectFit="cover" data-ai-hint={project.hint} />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
                 </div>
                 <CardContent className="p-6">

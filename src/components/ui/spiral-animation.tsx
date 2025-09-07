@@ -391,10 +391,15 @@ class Star {
 export function SpiralAnimation() {
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const animationRef = useRef<AnimationController | null>(null)
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+    const [dimensions, setDimensions] = useState<{width: number, height: number} | null>(null)
     
     // 处理窗口大小变化
     useEffect(() => {
+        setDimensions({
+            width: window.innerWidth,
+            height: window.innerHeight
+        })
+
         const handleResize = () => {
             setDimensions({
                 width: window.innerWidth,
@@ -402,14 +407,14 @@ export function SpiralAnimation() {
             })
         }
         
-        handleResize()
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
     }, [])
     
     // 创建和管理动画
     useEffect(() => {
-        if (dimensions.width === 0 || dimensions.height === 0) return
+        if (!dimensions) return;
+
         const canvas = canvasRef.current
         if (!canvas) return
         
@@ -419,10 +424,10 @@ export function SpiralAnimation() {
         // 处理DPR以解决模糊问题
         const dpr = window.devicePixelRatio || 1
         // 使用全屏尺寸
-        const size = Math.max(dimensions.width, dimensions.height) * dpr;
+        const size = Math.max(dimensions.width, dimensions.height)
         
-        canvas.width = size;
-        canvas.height = size;
+        canvas.width = size * dpr
+        canvas.height = size * dpr
         
         // 设置CSS尺寸
         canvas.style.width = `${dimensions.width}px`
@@ -432,7 +437,7 @@ export function SpiralAnimation() {
         ctx.scale(dpr, dpr)
         
         // 创建动画控制器
-        animationRef.current = new AnimationController(canvas, ctx, dpr, size / dpr);
+        animationRef.current = new AnimationController(canvas, ctx, dpr, size)
         
         return () => {
             // 清理动画
@@ -443,6 +448,10 @@ export function SpiralAnimation() {
         }
     }, [dimensions])
     
+    if (!dimensions) {
+        return null;
+    }
+
     return (
         <div className="relative w-full h-full">
             <canvas
