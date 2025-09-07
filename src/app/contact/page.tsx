@@ -46,7 +46,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6 text-primary" />
-                  <span>hello@techbloom.com</span>
+                  <span>hello@nextsms.com</span>
                 </div>
               </div>
             </div>

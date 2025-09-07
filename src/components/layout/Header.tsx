@@ -40,7 +40,7 @@ export function Header() {
           <div className="bg-primary text-primary-foreground p-2 rounded-lg">
             <Zap className="h-5 w-5" />
           </div>
-          <span>Tech Bloom</span>
+          <span>NextSms</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
@@ -68,7 +68,7 @@ export function Header() {
                    <div className="bg-primary text-primary-foreground p-2 rounded-lg">
                     <Zap className="h-5 w-5" />
                   </div>
-                  <span>Tech Bloom</span>
+                  <span>NextSms</span>
                 </Link>
                 <nav className="flex flex-col gap-6 text-lg">
                   {navLinks.map((link) => (

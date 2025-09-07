@@ -10,7 +10,7 @@ import {
 
 const testimonials = [
   {
-    quote: 'Working with Tech Bloom was a game-changer. Their expertise in both design and development helped us launch a product that our users love.',
+    quote: 'Working with NextSms was a game-changer. Their expertise in both design and development helped us launch a product that our users love.',
     name: 'Sarah Johnson',
     role: 'CEO, Innovate Inc.',
     avatar: 'https://placehold.co/40x40.png',
