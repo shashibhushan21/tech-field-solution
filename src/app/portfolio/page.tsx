@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { useState, useEffect } from 'react';
+import { Squares } from "@/components/ui/squares-background";
 
 const projects = [
   { title: "Project Alpha", category: "Web Application", image: "https://picsum.photos/600/400", hint: "website mockup" },
@@ -17,20 +17,19 @@ const projects = [
 ];
 
 function PortfolioHeader() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
   return (
-    <div className="relative w-full h-[60vh] overflow-hidden bg-background">
+    <div className="relative w-full h-[60vh] overflow-hidden bg-background flex items-center justify-center">
+       <div className="absolute inset-0 w-full h-full">
+        <Squares 
+          direction="diagonal"
+          speed={0.5}
+          squareSize={40}
+          borderColor="#333" 
+          hoverFillColor="#222"
+        />
+      </div>
       <div 
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center"
+        className="relative z-10 text-center"
       >
         <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">Our Work</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
