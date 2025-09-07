@@ -1,3 +1,4 @@
+
 'use client'
 
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,18 +25,20 @@ function PortfolioHeader() {
     setIsMounted(true);
   }, []);
 
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div className="relative w-full h-[60vh] overflow-hidden bg-background flex items-center justify-center">
        <div className="absolute inset-0 w-full h-full">
-        {isMounted && (
-          <Squares 
-            direction="diagonal"
-            speed={0.5}
-            squareSize={40}
-            borderColor="#333" 
-            hoverFillColor="#222"
-          />
-        )}
+        <Squares 
+          direction="diagonal"
+          speed={0.5}
+          squareSize={40}
+          borderColor="#333" 
+          hoverFillColor="#222"
+        />
       </div>
       <div 
         className="relative z-10 text-center"
