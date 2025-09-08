@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { Toaster } from '@/components/ui/toaster';
+import { AppBody } from '@/components/layout/AppBody';
 
 export const metadata: Metadata = {
   title: 'NextSms - Unlock Your Digital Potential',
@@ -24,12 +22,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-body antialiased')}>
-        <div id="root">
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <Toaster />
-        </div>
+        <AppBody>{children}</AppBody>
       </body>
     </html>
   );
