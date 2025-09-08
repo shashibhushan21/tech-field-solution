@@ -1,6 +1,15 @@
+'use client';
+
 import { ContentOptimizerClient } from '@/components/ContentOptimizerClient';
+import { useState, useEffect } from 'react';
 
 export default function ContentOptimizerPage() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="bg-background min-h-screen">
       <header className="pt-32 pb-16 md:pt-48 md:pb-24 bg-secondary text-center">
@@ -16,7 +25,7 @@ export default function ContentOptimizerPage() {
 
       <main className="py-12 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
-          <ContentOptimizerClient />
+          {isMounted ? <ContentOptimizerClient /> : null}
         </div>
       </main>
     </div>
