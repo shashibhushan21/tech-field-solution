@@ -36,7 +36,6 @@ const footerLinks = [
     title: 'Auth',
     links: [
       { label: 'Login', href: '/login' },
-      { label: 'Sign Up', href: '/signup' },
     ],
   },
 ];

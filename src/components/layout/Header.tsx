@@ -51,11 +51,8 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-2">
-          <Button variant="ghost" asChild>
-            <Link href="/login">Login</Link>
-          </Button>
           <Button asChild>
-            <Link href="/signup">Sign Up</Link>
+            <Link href="/login">Login</Link>
           </Button>
         </div>
         <div className="md:hidden">
@@ -87,9 +84,6 @@ export function Header() {
                  <div className="mt-auto flex flex-col gap-4">
                   <Button asChild size="lg">
                     <Link href="/login" onClick={closeMobileMenu}>Login</Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline">
-                     <Link href="/signup" onClick={closeMobileMenu}>Sign Up</Link>
                   </Button>
                 </div>
               </div>
