@@ -27,10 +27,16 @@ const footerLinks = [
   {
     title: 'Resources',
     links: [
-      { label: 'Blog', href: '#' },
       { label: 'Contact', href: '/contact' },
       { label: 'AI Optimizer', href: '/content-optimizer' },
       { label: 'Cost Estimator', href: '/cost-estimator' },
+    ],
+  },
+   {
+    title: 'Auth',
+    links: [
+      { label: 'Login', href: '/login' },
+      { label: 'Sign Up', href: '/signup' },
     ],
   },
 ];
@@ -57,7 +63,7 @@ export function Footer() {
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-8 md:col-span-3 md:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 md:col-span-3 md:grid-cols-4">
             {footerLinks.map((section) => (
               <div key={section.title}>
                 <h3 className="font-semibold">{section.title}</h3>

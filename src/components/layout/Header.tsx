@@ -50,9 +50,12 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-2">
+          <Button variant="ghost" asChild>
+            <Link href="/login">Login</Link>
+          </Button>
           <Button asChild>
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/signup">Sign Up</Link>
           </Button>
         </div>
         <div className="md:hidden">
@@ -78,9 +81,14 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                <Button asChild className="mt-auto" size="lg">
-                  <Link href="/contact" onClick={closeMobileMenu}>Contact Us</Link>
-                </Button>
+                 <div className="mt-auto flex flex-col gap-4">
+                  <Button asChild size="lg">
+                    <Link href="/login" onClick={closeMobileMenu}>Login</Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                     <Link href="/signup" onClick={closeMobileMenu}>Sign Up</Link>
+                  </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
