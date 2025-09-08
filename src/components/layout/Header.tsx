@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -66,7 +66,10 @@ export function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-xs bg-background">
+            <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
+               <SheetHeader className="p-6 pb-0">
+                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                </SheetHeader>
               <div className="flex flex-col h-full p-6">
                 <Link href="/" className="flex items-center gap-2 text-xl font-bold font-headline mb-8" onClick={closeMobileMenu}>
                    <div className="bg-primary text-primary-foreground p-2 rounded-lg">
