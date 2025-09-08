@@ -1,9 +1,12 @@
+'use client';
+
 import { HeroGeometric } from '@/components/sections/HeroGeometric';
 import { WhyChooseUs } from '@/components/sections/WhyChooseUs';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { BentoGrid, type BentoItem } from '@/components/ui/bento-grid';
 import { Code, Smartphone, Megaphone, Search } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const services: BentoItem[] = [
     {
@@ -42,13 +45,23 @@ const services: BentoItem[] = [
 
 
 export default function Home() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <>
-      <HeroGeometric 
-        badge="NextSms"
-        title1="Unlock Your"
-        title2="Digital Potential"
-      />
+      {isMounted ? (
+        <HeroGeometric 
+          badge="NextSms"
+          title1="Unlock Your"
+          title2="Digital Potential"
+        />
+      ) : (
+        <div className="min-h-screen w-full flex items-center justify-center bg-background" />
+      )}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto">
