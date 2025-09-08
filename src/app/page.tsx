@@ -60,7 +60,7 @@ export default function Home() {
           title2="Digital Potential"
         />
       ) : (
-        <div className="min-h-screen w-full flex items-center justify-center bg-background" />
+        <div className="h-[80vh] md:h-screen w-full flex items-center justify-center bg-background" />
       )}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4 md:px-6">
