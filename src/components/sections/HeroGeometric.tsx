@@ -94,7 +94,7 @@ function HeroGeometric({
     };
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+        <div className="relative h-[80vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 w-full h-full">
                 <SparklesCore
                     id="tsparticlesfullpage"
