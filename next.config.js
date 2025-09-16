@@ -6,9 +6,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    serverComponentsExternalPackages: ['@genkit-ai/googleai', '@genkit-ai/next', 'genkit'],
-  },
+
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.externals.push({
