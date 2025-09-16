@@ -55,7 +55,7 @@ export default function Home() {
     <>
       {isMounted ? (
         <HeroGeometric 
-          badge="NextSms"
+          badge="Tech Field Solution"
           title1="Unlock Your"
           title2="Digital Potential"
         />

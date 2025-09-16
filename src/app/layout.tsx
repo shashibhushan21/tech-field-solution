@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { AppBody } from '@/components/layout/AppBody';
 
 export const metadata: Metadata = {
-  title: 'NextSms - Unlock Your Digital Potential',
+  title: 'Tech Field Solution - Unlock Your Digital Potential',
   description: 'We build and grow innovative digital products for leading companies.',
 };
 
