@@ -115,6 +115,32 @@ export function ContentOptimizerClient() {
           </CardContent>
         </Card>
       )}
+      )}
+      
+      {/* Features Section */}
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="text-center p-6 bg-card/30 rounded-xl border">
+          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">🎯</span>
+          </div>
+          <h3 className="font-semibold mb-2">Smart Optimization</h3>
+          <p className="text-sm text-muted-foreground">AI analyzes your content and suggests improvements for better engagement.</p>
+        </div>
+        <div className="text-center p-6 bg-card/30 rounded-xl border">
+          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">⚡</span>
+          </div>
+          <h3 className="font-semibold mb-2">Instant Results</h3>
+          <p className="text-sm text-muted-foreground">Get optimized content in seconds, not hours of manual editing.</p>
+        </div>
+        <div className="text-center p-6 bg-card/30 rounded-xl border">
+          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">🎨</span>
+          </div>
+          <h3 className="font-semibold mb-2">Multiple Styles</h3>
+          <p className="text-sm text-muted-foreground">Choose from various optimization styles to match your brand voice.</p>
+        </div>
+      </div>
     </div>
   );
 }

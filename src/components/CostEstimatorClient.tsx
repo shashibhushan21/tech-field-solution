@@ -217,17 +217,22 @@ export function CostEstimatorClient() {
 
                  {/* Digital Marketing Options */}
                 {services.includes('marketing') && (
-                    <Card>
+                    <Card className="bg-card/50 backdrop-blur-sm border hover:shadow-lg transition-all duration-300">
                         <CardHeader>
-                            <CardTitle>4. Digital Marketing Needs</CardTitle>
+                            <CardTitle className="flex items-center gap-2">
+                                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                                    <span className="text-primary font-bold">4</span>
+                                </div>
+                                Digital Marketing Needs
+                            </CardTitle>
                             <CardDescription>Select desired monthly services.</CardDescription>
                         </CardHeader>
                         <CardContent className="grid sm:grid-cols-2 gap-4">
                             {[{id: 'seo', name: 'SEO'}, {id: 'smm', name: 'Social Media'}, {id: 'ppc', name: 'PPC Advertising'}, {id: 'content', name: 'Content Creation'}].map(s => {
                                 return (
-                                    <div key={s.id} className={`flex items-center p-4 rounded-lg border cursor-pointer transition-colors ${marketingServices.includes(s.id) ? 'bg-primary/10 border-primary' : 'bg-secondary'}`} onClick={() => setMarketingServices(prev => prev.includes(s.id) ? prev.filter(item => item !== s.id) : [...prev, s.id])}>
-                                        <Checkbox checked={marketingServices.includes(s.id)} id={s.id} className="mr-3" />
-                                        <Label htmlFor={s.id} className="cursor-pointer">{s.name}</Label>
+                                    <div key={s.id} className={`group flex items-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1 ${marketingServices.includes(s.id) ? 'bg-primary/10 border-primary shadow-lg' : 'bg-card/50 border-border hover:border-primary/50'}`} onClick={() => setMarketingServices(prev => prev.includes(s.id) ? prev.filter(item => item !== s.id) : [...prev, s.id])}>
+                                        <Checkbox checked={marketingServices.includes(s.id)} id={s.id} className="mr-3" suppressHydrationWarning />
+                                        <Label htmlFor={s.id} className="cursor-pointer font-medium group-hover:text-primary transition-colors">{s.name}</Label>
                                     </div>
                                 )
                             })}
@@ -238,25 +243,53 @@ export function CostEstimatorClient() {
 
             {/* Cost Summary */}
             <div className="lg:col-span-1">
-                <Card className="sticky top-28">
-                    <CardHeader>
-                        <CardTitle>Estimated Cost</CardTitle>
+                <Card className="sticky top-28 bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm border-2 shadow-xl">
+                    <CardHeader className="text-center">
+                        <CardTitle className="text-2xl">Estimated Cost</CardTitle>
+                        <CardDescription>Real-time project pricing</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
-                        <div className="text-4xl font-bold text-center">
-                            ${totalCost.toLocaleString()}
+                        <div className="text-center">
+                            <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                                ${totalCost.toLocaleString()}
+                            </div>
+                            <p className="text-sm text-muted-foreground">Starting from</p>
                         </div>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                            {webCost > 0 && <li className="flex justify-between"><span>Web App</span> <span>${webCost.toLocaleString()}</span></li>}
-                            {mobileCost > 0 && <li className="flex justify-between"><span>Mobile App</span> <span>${mobileCost.toLocaleString()}</span></li>}
-                            {marketingCost > 0 && <li className="flex justify-between"><span>Marketing (monthly)</span> <span>${marketingCost.toLocaleString()}</span></li>}
-                        </ul>
-                        <p className="text-xs text-center text-muted-foreground pt-4">This is a rough estimate. Actual costs may vary based on project complexity.</p>
-                         <Button size="lg" className="w-full" asChild>
-                            <Link href="/contact">
-                                Get a Precise Quote <ArrowRight className="ml-2" />
-                            </Link>
-                        </Button>
+                        
+                        {(webCost > 0 || mobileCost > 0 || marketingCost > 0) && (
+                            <div className="space-y-3 p-4 bg-secondary/30 rounded-xl">
+                                <h4 className="font-semibold text-sm">Cost Breakdown</h4>
+                                {webCost > 0 && (
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-sm">Web Application</span>
+                                        <span className="font-semibold">${webCost.toLocaleString()}</span>
+                                    </div>
+                                )}
+                                {mobileCost > 0 && (
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-sm">Mobile App</span>
+                                        <span className="font-semibold">${mobileCost.toLocaleString()}</span>
+                                    </div>
+                                )}
+                                {marketingCost > 0 && (
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-sm">Marketing (monthly)</span>
+                                        <span className="font-semibold">${marketingCost.toLocaleString()}</span>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                        
+                        <div className="space-y-3">
+                            <Button size="lg" className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-lg" asChild suppressHydrationWarning>
+                                <Link href="/contact">
+                                    Get Precise Quote <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
+                            </Button>
+                            <p className="text-xs text-center text-muted-foreground">
+                                💡 This is an estimate. Final pricing depends on project complexity and requirements.
+                            </p>
+                        </div>
                     </CardContent>
                 </Card>
             </div>

@@ -25,7 +25,7 @@ function BentoGrid({ items }: BentoGridProps) {
                 <div
                     key={index}
                     className={cn(
-                        "group relative p-6 rounded-2xl overflow-hidden transition-all duration-300",
+                        "group relative p-6 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer",
                         "border border-white/10 bg-card",
                         "hover:shadow-xl hover:shadow-primary/5",
                         "hover:-translate-y-1 will-change-transform",
@@ -35,6 +35,7 @@ function BentoGrid({ items }: BentoGridProps) {
                                 item.hasPersistentHover,
                         }
                     )}
+                    onClick={() => window.location.href = '/services'}
                 >
                     <div
                         className={`absolute inset-0 ${
