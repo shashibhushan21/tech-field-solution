@@ -21,7 +21,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn('font-body antialiased')}>
+      <body className={cn('font-body antialiased')} suppressHydrationWarning>
         <AppBody>{children}</AppBody>
       </body>
     </html>

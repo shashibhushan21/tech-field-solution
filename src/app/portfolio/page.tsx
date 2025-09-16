@@ -10,12 +10,60 @@ import { Squares } from "@/components/ui/squares-background";
 import { useState, useEffect } from "react";
 
 const projects = [
-  { title: "Project Alpha", category: "Web Application", image: "https://picsum.photos/600/400", hint: "website mockup" },
-  { title: "Project Beta", category: "Mobile App", image: "https://picsum.photos/600/400", hint: "app design" },
-  { title: "Project Gamma", category: "SEO Strategy", image: "https://picsum.photos/600/400", hint: "analytics dashboard" },
-  { title: "Project Delta", category: "Web Application", image: "https://picsum.photos/600/400", hint: "saas interface" },
-  { title: "Project Epsilon", category: "Digital Marketing", image: "https://picsum.photos/600/400", hint: "social media campaign" },
-  { title: "Project Zeta", category: "Mobile App", image: "https://picsum.photos/600/400", hint: "mobile app screen" },
+  { 
+    slug: "e-commerce-multi-vendor",
+    title: "E-Commerce Multi-Vendor Platform", 
+    category: "Multi-Vendor Application", 
+    description: "Complete marketplace with vendor dashboard, real-time inventory, and payment integration",
+    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    image: "https://picsum.photos/600/400", 
+    hint: "e-commerce dashboard" 
+  },
+  { 
+    slug: "real-time-cms",
+    title: "Real-Time Content Management System", 
+    category: "Web Application", 
+    description: "Dynamic CMS with live content editing and user role management",
+    tech: ["Next.js", "Socket.io", "PostgreSQL"],
+    image: "https://picsum.photos/600/400", 
+    hint: "cms interface" 
+  },
+  { 
+    slug: "restaurant-management",
+    title: "Restaurant Management Platform", 
+    category: "Admin Panel", 
+    description: "Complete restaurant management with order tracking and analytics dashboard",
+    tech: ["React", "Express", "MySQL", "Charts.js"],
+    image: "https://picsum.photos/600/400", 
+    hint: "restaurant dashboard" 
+  },
+  { 
+    slug: "healthcare-appointment",
+    title: "Healthcare Appointment System", 
+    category: "Web Application", 
+    description: "Patient management system with appointment scheduling and medical records",
+    tech: ["Vue.js", "Laravel", "MySQL"],
+    image: "https://picsum.photos/600/400", 
+    hint: "healthcare interface" 
+  },
+  { 
+    slug: "learning-management",
+    title: "Learning Management System", 
+    category: "Multi-Vendor Application", 
+    description: "Online education platform with instructor panels and student progress tracking",
+    tech: ["React", "Node.js", "MongoDB", "Video.js"],
+    image: "https://picsum.photos/600/400", 
+    hint: "learning platform" 
+  },
+  { 
+    slug: "inventory-management",
+    title: "Inventory Management System", 
+    category: "Admin Panel", 
+    description: "Real-time inventory tracking with automated alerts and reporting",
+    tech: ["Angular", "Spring Boot", "PostgreSQL"],
+    image: "https://picsum.photos/600/400", 
+    hint: "inventory dashboard" 
+  },
 ];
 
 function PortfolioHeader() {
@@ -45,7 +93,7 @@ function PortfolioHeader() {
       >
         <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">Our Work</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
-          A showcase of our successful projects and partnerships.
+          Real projects showcasing modern web applications, multi-vendor platforms, and admin panel solutions.
         </p>
       </div>
     </div>
@@ -68,10 +116,18 @@ export default function PortfolioPage() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
                 </div>
                 <CardContent className="p-6">
-                  <Badge variant="secondary" className="mb-2">{project.category}</Badge>
-                  <h3 className="font-bold text-xl text-foreground">{project.title}</h3>
-                  <Button variant="link" className="p-0 mt-2 text-primary" asChild>
-                    <Link href="#">View Project &rarr;</Link>
+                  <Badge variant="secondary" className="mb-3">{project.category}</Badge>
+                  <h3 className="font-bold text-xl text-foreground mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-3 line-clamp-2">{project.description}</p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {project.tech.map((tech) => (
+                      <span key={tech} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <Button variant="link" className="p-0 text-primary" asChild>
+                    <Link href={`/portfolio/${project.slug}`}>View Details &rarr;</Link>
                   </Button>
                 </CardContent>
               </Card>

@@ -34,6 +34,11 @@ interface AuthFormProps {
 export function AuthForm({ mode }: AuthFormProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   useEffect(() => {
@@ -157,7 +162,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       {/* Header */}
       <header className="absolute left-0 right-0 top-0 flex items-center justify-between px-6 py-4 border-b border-zinc-800/80">
         <Link href="/" className="text-xs tracking-[0.14em] uppercase text-zinc-400">
-          NextSms
+          Tech Field Solution
         </Link>
         <Button
           variant="outline"
@@ -182,7 +187,7 @@ export function AuthForm({ mode }: AuthFormProps) {
           </CardHeader>
 
           <CardContent className="grid gap-5">
-            {!isLogin && (
+            {isMounted && !isLogin && (
               <div className="grid gap-2">
                 <Label htmlFor="name" className="text-zinc-300">
                   Name
@@ -194,6 +199,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                     type="text"
                     placeholder="Your Name"
                     className="pl-10 bg-zinc-950 border-zinc-800 text-zinc-50 placeholder:text-zinc-600"
+                    suppressHydrationWarning
                   />
                 </div>
               </div>
@@ -209,6 +215,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                   type="email"
                   placeholder="you@example.com"
                   className="pl-10 bg-zinc-950 border-zinc-800 text-zinc-50 placeholder:text-zinc-600"
+                  suppressHydrationWarning
                 />
               </div>
             </div>
@@ -224,12 +231,14 @@ export function AuthForm({ mode }: AuthFormProps) {
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   className="pl-10 pr-10 bg-zinc-950 border-zinc-800 text-zinc-50 placeholder:text-zinc-600"
+                  suppressHydrationWarning
                 />
                 <button
                   type="button"
                   aria-label={showPassword ? "Hide password" : "Show password"}
                   className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-md text-zinc-400 hover:text-zinc-200"
                   onClick={() => setShowPassword((v) => !v)}
+                  suppressHydrationWarning
                 >
                   {showPassword ? (
                     <EyeOff className="h-4 w-4" />
@@ -240,7 +249,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               </div>
             </div>
 
-            {!isLogin && (
+            {isMounted && !isLogin && (
               <div className="grid gap-2">
                 <Label htmlFor="confirm-password" className="text-zinc-300">
                   Confirm Password
@@ -252,12 +261,14 @@ export function AuthForm({ mode }: AuthFormProps) {
                     type={showConfirmPassword ? "text" : "password"}
                     placeholder="••••••••"
                     className="pl-10 pr-10 bg-zinc-950 border-zinc-800 text-zinc-50 placeholder:text-zinc-600"
+                    suppressHydrationWarning
                   />
                    <button
                     type="button"
                     aria-label={showConfirmPassword ? "Hide password" : "Show password"}
                     className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-md text-zinc-400 hover:text-zinc-200"
                     onClick={() => setShowConfirmPassword((v) => !v)}
+                    suppressHydrationWarning
                   >
                     {showConfirmPassword ? (
                       <EyeOff className="h-4 w-4" />
@@ -269,12 +280,13 @@ export function AuthForm({ mode }: AuthFormProps) {
               </div>
             )}
             
-            {isLogin && (
+            {isMounted && isLogin && (
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Checkbox
                     id="remember"
                     className="border-zinc-700 data-[state=checked]:bg-zinc-50 data-[state=checked]:text-zinc-900"
+                    suppressHydrationWarning
                   />
                   <Label htmlFor="remember" className="text-zinc-400">
                     Remember me
@@ -286,7 +298,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               </div>
             )}
 
-            <Button className="w-full h-10 rounded-lg bg-zinc-50 text-zinc-900 hover:bg-zinc-200">
+            <Button className="w-full h-10 rounded-lg bg-zinc-50 text-zinc-900 hover:bg-zinc-200" suppressHydrationWarning>
               {isLogin ? 'Continue' : 'Create account'}
             </Button>
 
@@ -301,6 +313,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               <Button
                 variant="outline"
                 className="h-10 rounded-lg border-zinc-800 bg-zinc-950 text-zinc-50 hover:bg-zinc-900/80"
+                suppressHydrationWarning
               >
                 <Github className="h-4 w-4 mr-2" />
                 GitHub
@@ -308,6 +321,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               <Button
                 variant="outline"
                 className="h-10 rounded-lg border-zinc-800 bg-zinc-950 text-zinc-50 hover:bg-zinc-900/80"
+                suppressHydrationWarning
               >
                 <Chrome className="h-4 w-4 mr-2" />
                 Google

@@ -35,7 +35,7 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 className="font-headline text-3xl md:text-4xl font-extrabold tracking-tight">Our Mission & Values</h2>
-                    <p className="mt-4 text-lg text-muted-foreground">Our mission is to empower businesses with transformative digital solutions. We specialize in creating high-performance web and mobile applications, backed by strategic digital marketing and SEO to ensure your project reaches its full potential.</p>
+                    <p className="mt-4 text-lg text-muted-foreground">We specialize in modern responsive web applications, multi-vendor platforms with admin panels, and real-time content management systems. Our clients can easily update their content in real-time while we handle SEO optimization and complete project maintenance after deployment.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {values.map(value => (

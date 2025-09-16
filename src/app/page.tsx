@@ -10,20 +10,20 @@ import { useState, useEffect } from 'react';
 
 const services: BentoItem[] = [
     {
-        title: "Web Application Development",
-        description: "Custom web solutions that are scalable, secure, and deliver exceptional user experiences.",
+        title: "Modern Web Applications",
+        description: "Fully responsive web apps with real-time content management and custom admin panels.",
         icon: <Code className="w-4 h-4 text-purple-500" />,
         status: "Full-Stack",
-        tags: ["React", "Next.js", "Node"],
+        tags: ["React", "Next.js", "Real-time"],
         colSpan: 2,
         hasPersistentHover: true,
     },
     {
-        title: "Mobile App Development",
-        description: "Native and cross-platform mobile apps that engage users and drive business growth.",
+        title: "Multi-Vendor Platforms",
+        description: "Complete marketplace solutions with vendor management and comprehensive admin panels.",
         icon: <Smartphone className="w-4 h-4 text-emerald-500" />,
-        status: "iOS & Android",
-        tags: ["Swift", "Kotlin", "React Native"],
+        status: "Admin Panel",
+        tags: ["Vendors", "Analytics", "Payments"],
     },
     {
         title: "SEO Optimization",
@@ -34,11 +34,11 @@ const services: BentoItem[] = [
         status: "Active",
     },
     {
-        title: "Digital Marketing",
-        description: "Comprehensive marketing campaigns to build your brand and connect with your target audience.",
+        title: "SEO & Maintenance",
+        description: "Complete SEO optimization and ongoing project maintenance to keep your application running smoothly.",
         icon: <Megaphone className="w-4 h-4 text-rose-500" />,
-        status: "Campaigns",
-        tags: ["SMM", "PPC", "Content"],
+        status: "Ongoing",
+        tags: ["SEO", "Updates", "Security"],
         colSpan: 2,
     },
 ];
@@ -69,7 +69,7 @@ export default function Home() {
               Our Expertise, Your Advantage
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              From initial concept to final launch and beyond, we provide the full spectrum of services needed to make your digital product a success.
+              From modern web applications to multi-vendor platforms, we deliver complete tech solutions with real-time content management and ongoing maintenance support.
             </p>
           </div>
           <div className="mt-12">

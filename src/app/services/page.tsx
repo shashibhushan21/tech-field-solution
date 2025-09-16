@@ -11,43 +11,43 @@ const serviceCategories = [
   {
     id: 'web-development',
     icon: Code,
-    title: 'Web Application Development',
-    summary: 'From powerful web applications to stunning marketing sites, we build fast, secure, and scalable solutions using modern technologies. Our code is clean, efficient, and built to last.',
+    title: 'Modern Web Applications',
+    summary: 'Full-stack responsive web applications with real-time content management. Users can easily update content in real-time with our intuitive admin panels and modern interfaces.',
     image: 'https://picsum.photos/600/400',
     hint: 'code editor',
     benefits: [
-      'Front-end and back-end development',
-      'E-commerce and platform solutions',
-      'API integrations and development',
-      'Ongoing maintenance and support',
+      'Fully responsive design for all devices',
+      'Real-time content management system',
+      'Modern tech stack (React, Next.js, Node.js)',
+      'Custom admin panels with user roles',
     ]
   },
   {
-    id: 'mobile-development',
+    id: 'multi-vendor',
     icon: Smartphone,
-    title: 'Mobile App Development',
-    summary: 'We create engaging and intuitive mobile applications for iOS and Android. Whether native or cross-platform, our apps are designed to perform and provide a seamless user experience.',
+    title: 'Multi-Vendor Applications',
+    summary: 'Complete multi-vendor platforms with comprehensive admin panels. Vendors can manage their products, orders, and analytics while admins control the entire ecosystem.',
     image: 'https://picsum.photos/600/400',
     hint: 'mobile app screen',
     benefits: [
-      'Native iOS (Swift) & Android (Kotlin)',
-      'Cross-platform with React Native',
-      'App Store submission and optimization',
-      'Push notifications and in-app purchases',
+      'Vendor management system',
+      'Advanced admin panel with analytics',
+      'Payment gateway integration',
+      'Order management & tracking',
     ]
   },
   {
-    id: 'digital-marketing',
+    id: 'seo-maintenance',
     icon: Megaphone,
-    title: 'Digital Marketing & SEO',
-    summary: 'We help you scale your business with data-informed growth strategies. We boost your online presence, drive targeted traffic, and implement tactics that result in sustainable growth.',
+    title: 'SEO & Project Maintenance',
+    summary: 'Complete SEO optimization and ongoing project maintenance. We ensure your application stays updated, secure, and ranks high in search results.',
     image: 'https://picsum.photos/600/400',
     hint: 'marketing analytics dashboard',
     benefits: [
-      'Search Engine Optimization (SEO)',
-      'Pay-Per-Click (PPC) Advertising',
-      'Social Media Marketing (SMM)',
-      'Content strategy and creation',
+      'Technical SEO optimization',
+      'Post-deployment maintenance',
+      'Performance monitoring & updates',
+      'Security patches & backups',
     ]
   }
 ];
@@ -80,47 +80,75 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
-            Comprehensive solutions to build, launch, and grow your digital product.
+            Professional tech services from modern web apps to multi-vendor platforms with complete maintenance support.
           </p>
         </div>
       </header>
 
-      <div className="divide-y divide-border">
-        {serviceCategories.map((service, index) => (
-          <section key={service.id} id={service.id} className="py-20 md:py-28">
-            <div className="container mx-auto px-4 md:px-6">
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 !== 0 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={`relative h-80 lg:h-96 w-full ${index % 2 !== 0 ? 'lg:col-start-2' : ''}`}>
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    width={600}
-                    height={400}
-                    objectFit="cover"
-                    className="rounded-2xl shadow-lg"
-                    data-ai-hint={service.hint}
-                  />
-                </div>
-                <div>
-                  <service.icon className="h-10 w-10 text-primary mb-4" />
-                  <h2 className="font-headline text-3xl md:text-4xl font-extrabold tracking-tight">{service.title}</h2>
-                  <p className="mt-4 text-lg text-muted-foreground">{service.summary}</p>
-                  <ul className="mt-6 space-y-2">
-                    {service.benefits.map(benefit => (
-                      <li key={benefit} className="flex items-center gap-3">
-                        <ArrowRight className="h-5 w-5 text-primary shrink-0" />
-                        <span className="text-muted-foreground">{benefit}</span>
+      <div className="py-20 md:py-28 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] via-transparent to-secondary/[0.02]" />
+        <div className="container mx-auto px-4 md:px-6 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {serviceCategories.map((service, index) => (
+              <div 
+                key={service.id} 
+                className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02]"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+
+                
+                <div className="relative z-10">
+                  <div className="mb-6 overflow-hidden rounded-2xl">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={400}
+                      height={250}
+                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      data-ai-hint={service.hint}
+                    />
+
+                  </div>
+                  
+                  <div className="mb-4 p-4 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300">
+                    <service.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  
+                  <h3 className="font-headline text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground mb-6 text-sm leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                    {service.summary}
+                  </p>
+                  
+                  <ul className="space-y-3 mb-8">
+                    {service.benefits.map((benefit, idx) => (
+                      <li 
+                        key={benefit} 
+                        className="flex items-center gap-3 text-sm group-hover:translate-x-1 transition-transform duration-300"
+                        style={{ transitionDelay: `${idx * 50}ms` }}
+                      >
+                        <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full group-hover:scale-125 transition-transform duration-300" />
+                        <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{benefit}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button asChild className="mt-8">
-                    <Link href="/contact">Get Started</Link>
+                  
+                  <Button 
+                    className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary group-hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    onClick={() => window.location.href = `/get-started/${service.id}`}
+                  >
+                    <span className="flex items-center justify-center gap-2 cursor-pointer">
+                      Get Started
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
                   </Button>
                 </div>
               </div>
-            </div>
-          </section>
-        ))}
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
