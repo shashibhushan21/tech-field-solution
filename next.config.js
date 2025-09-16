@@ -1,6 +1,4 @@
-import type {NextConfig} from 'next';
-
-const nextConfig: NextConfig = {
+const nextConfig = {
   output: 'standalone',
   typescript: {
     ignoreBuildErrors: true,
@@ -37,4 +35,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
