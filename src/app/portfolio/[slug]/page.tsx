@@ -60,6 +60,14 @@ const projects = [
   }
 ];
 
+export async function generateStaticParams() {
+  return [
+    { slug: 'e-commerce-multi-vendor' },
+    { slug: 'real-time-cms' },
+    { slug: 'restaurant-management' }
+  ];
+}
+
 export default function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
   const project = projects.find(p => p.slug === slug);

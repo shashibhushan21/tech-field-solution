@@ -50,6 +50,14 @@ const services = {
   }
 };
 
+export async function generateStaticParams() {
+  return [
+    { id: 'web-development' },
+    { id: 'multi-vendor' },
+    { id: 'seo-maintenance' }
+  ];
+}
+
 export default function GetStartedPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   console.log('Get Started Page - ID:', id);
